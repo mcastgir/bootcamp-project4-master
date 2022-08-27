@@ -14,9 +14,7 @@
 
 package com.nttdata.bootcamp.master.model.document;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.ToString;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -24,24 +22,16 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * Clase de tipo document para obtener o establecer los datos de cada atributo.
  */
 @Data
+@Builder
 @ToString
 @Document(collection="document_type")
 public class DocumentType {
 
-    /** Identificador del Tipo de Documento */
     @Id
     private String id;
-
-    /** Código del Tipo de Documento */
     private String code;
-
-    /** Nombre del Tipo de Documento */
     private String name;
-
-    /** Descripción del Tipo de Documento */
     private String description;
-
-    /** Estado del registro */
     private boolean state;
 
 }
